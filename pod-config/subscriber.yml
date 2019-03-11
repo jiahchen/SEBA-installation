@@ -1,0 +1,19 @@
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/rcordsubscriber.yaml
+description: Create a test subscriber
+topology_template:
+  node_templates:
+    # A subscriber
+    my_house:
+      type: tosca.nodes.RCORDSubscriber
+      properties:
+        name: EdgecoreTW
+        status: pre-provisioned
+        c_tag: 111
+        s_tag: 222
+        onu_device: BRCM12345678 # Serial Number of the ONU Device to which this subscriber is connected
+        #onu_device: ISKT71e81fb8 # Serial Number of the ONU Device to which this subscriber is connected
+        nas_port_id : "nas_id"
+        circuit_id: foo1
+        remote_id: bar1
