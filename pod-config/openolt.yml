@@ -18,10 +18,10 @@ topology_template:
       properties:
         name: My OLT
         device_type: openolt
-        host: 10.113.100.200
+        host: 192.168.200.132
         port: 9191
-        switch_datapath_id: of:0000b86a97329639 # the openflow switch to which the OLT is connected
-        switch_port: "2" # the port on the switch on which the OLT is connected
+        switch_datapath_id: of:0000cc37abc85298 # the openflow switch to which the OLT is connected
+        switch_port: "49" # the port on the switch on which the OLT is connected
         outer_tpid: "0x8100"
         uplink: "65536"
         nas_id: "NAS_ID"

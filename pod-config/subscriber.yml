@@ -8,11 +8,11 @@ topology_template:
     my_house:
       type: tosca.nodes.RCORDSubscriber
       properties:
-        name: EdgecoreTW
+        name: EdgecoreCN
         status: pre-provisioned
         c_tag: 111
         s_tag: 222
-        onu_device: BRCM12345678 # Serial Number of the ONU Device to which this subscriber is connected
+        onu_device: ISKT71E81D58 # Serial Number of the ONU Device to which this subscriber is connected
         #onu_device: ISKT71e81fb8 # Serial Number of the ONU Device to which this subscriber is connected
         nas_port_id : "nas_id"
         circuit_id: foo1

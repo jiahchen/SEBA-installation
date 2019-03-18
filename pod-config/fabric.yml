@@ -18,18 +18,18 @@ topology_template:
       type: tosca.nodes.Switch
       properties:
         driver: ofdpa3
-        ipv4Loopback: 10.113.100.201
-        ipv4NodeSid: 201
+        ipv4Loopback: 192.168.200.162
+        ipv4NodeSid: 162
         isEdgeRouter: True
         name: AGG_SWITCH
-        ofId: of:0000b86a97329639
-        routerMac: 00:00:00:00:02:01
+        ofId: of:0000cc37abc85298
+        routerMac: 00:00:00:00:01:62
 
     # Setup the OLT switch port
     port#olt_port:
       type: tosca.nodes.SwitchPort
       properties:
-        portId: 2
+        portId: 49
         host_learning: false
       requirements:
         - switch:
@@ -40,7 +40,7 @@ topology_template:
     port#bng_port:
       type: tosca.nodes.SwitchPort
       properties:
-        portId: 33
+        portId: 50
       requirements:
         - switch:
             node: switch#leaf_1
@@ -52,7 +52,7 @@ topology_template:
       type: tosca.nodes.BNGPortMapping
       properties:
         s_tag: any
-        switch_port: 33
+        switch_port: 50
     
     # DHCP L2 Relay config
     onos_app#dhcpl2relay:
