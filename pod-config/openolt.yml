@@ -1,0 +1,32 @@
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/oltdevice.yaml
+  - custom_types/onudevice.yaml
+  - custom_types/voltservice.yaml
+description: Create an OLT Device in VOLTHA
+topology_template:
+  node_templates:
+
+    service#volt:
+      type: tosca.nodes.VOLTService
+      properties:
+        name: volt
+        must-exist: true
+
+    olt_device:
+      type: tosca.nodes.OLTDevice
+      properties:
+        name: My OLT
+        device_type: openolt
+        host: 10.113.100.200
+        port: 9191
+        switch_datapath_id: of:0000b86a97329639 # the openflow switch to which the OLT is connected
+        switch_port: "2" # the port on the switch on which the OLT is connected
+        outer_tpid: "0x8100"
+        uplink: "65536"
+        nas_id: "NAS_ID"
+#        serial_number: "10.113.100.200:9191"
+      requirements:
+        - volt_service:
+            node: service#volt
+            relationship: tosca.relationships.BelongsToOne
