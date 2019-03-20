@@ -27,7 +27,7 @@ images:
   tosca_loader:
     repository: 'xosproject/tosca-loader'
     tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
 global:
   registry: ""

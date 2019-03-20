@@ -25,7 +25,7 @@ fullnameOverride: ""
 image:
   repository: 'xosproject/kubernetes-synchronizer'
   tag: '{{ .Chart.AppVersion }}'
-  pullPolicy: 'Always'
+  pullPolicy: 'IfNotPresent'
 
 global:
   registry: ''

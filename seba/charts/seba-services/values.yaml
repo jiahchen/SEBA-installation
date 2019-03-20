@@ -26,12 +26,12 @@ images:
   tosca_loader:
     repository: 'xosproject/tosca-loader'
     tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
   xos_api_tester:
     repository: 'xosproject/xos-api-tester'
     tag: 'master'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
 global:
   registry: ""
@@ -40,11 +40,11 @@ xosAdminUser: "admin@opencord.org"
 xosAdminPassword: "letmein"
 
 # ONOS applications
-aaaAppUrl: "https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/aaa/1.8.0/aaa-1.8.0.oar"
-sadisAppUrl: "https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/sadis-app/2.2.0/sadis-app-2.2.0.oar"
-dhcpl2relayAppUrl: "https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/dhcpl2relay/1.5.0/dhcpl2relay-1.5.0.oar"
-oltAppUrl: "https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/olt-app/2.1.0/olt-app-2.1.0.oar"
-kafkaAppUrl: "https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/kafka/1.0.0/kafka-1.0.0.oar"
+aaaAppUrl: "http://192.168.200.185:8000/aaa-1.8.0.oar"
+sadisAppUrl: "http://192.168.200.185:8000/sadis-app-2.2.0.oar"
+dhcpl2relayAppUrl: "http://192.168.200.185:8000/dhcpl2relay-1.5.0.oar"
+oltAppUrl: "http://192.168.200.185:8000/olt-app-2.1.0.oar"
+kafkaAppUrl: "http://192.168.200.185:8000/kafka-1.0.0.oar"
 
 onosRestService: "onos-ui.default.svc.cluster.local"
 kafkaService: "cord-kafka.default.svc.cluster.local:9092"

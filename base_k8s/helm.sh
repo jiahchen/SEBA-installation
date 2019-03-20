@@ -4,7 +4,7 @@ HELM_VERSION="2.10.0"
 HELM_SHA256SUM="0fa2ed4983b1e4a3f90f776d08b88b0c73fd83f305b5b634175cb15e61342ffe"
 HELM_PLATFORM="linux-amd64"
 
-wget https://storage.googleapis.com/kubernetes-helm/helm-v2.13.0-linux-amd64.tar.gz
+#wget https://storage.googleapis.com/kubernetes-helm/helm-v2.13.0-linux-amd64.tar.gz
 
 #curl -L -o /tmp/helm.tgz "https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-${HELM_PLATFORM}.tar.gz"
 #echo "${HELM_SHA256SUM}  /tmp/helm.tgz" | sha256sum -c -

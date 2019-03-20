@@ -4,8 +4,8 @@ imports:
   - custom_types/switchport.yaml
   - custom_types/portinterface.yaml
   - custom_types/bngportmapping.yaml
-#  - custom_types/attworkflowdriverwhitelistentry.yaml
-#  - custom_types/attworkflowdriverservice.yaml
+  - custom_types/attworkflowdriverwhitelistentry.yaml
+  - custom_types/attworkflowdriverservice.yaml
   - custom_types/serviceinstanceattribute.yaml
   - custom_types/onosapp.yaml
 
@@ -78,20 +78,23 @@ topology_template:
             relationship: tosca.relationships.BelongsToOne
 
     # ONU whitelist
-#    service#att:
-#      type: tosca.nodes.AttWorkflowDriverService
-#      properties:
-#        name: att-workflow-driver
-#        must-exist: true
+    service#att:
+      type: tosca.nodes.AttWorkflowDriverService
+      properties:
+        name: att-workflow-driver
+        must-exist: true
 
-#    ISKT71e81fb8:
-#      type: tosca.nodes.AttWorkflowDriverWhiteListEntry
-#      properties:
-#        serial_number: BRCM12345678
-#        #serial_number: ISKT71e81fb8
-#        pon_port_id: 536870912
+    ISKT71e81d58:
+      type: tosca.nodes.AttWorkflowDriverWhiteListEntry
+      properties:
+        serial_number: ISKT71e81d58
+        #serial_number: ISKT71e81fb8
+        pon_port_id: 536870912
 #        device_id: of:000000000a7164c8
-#      requirements:
-#        - owner:
-#            node: service#att
-#            relationship: tosca.relationships.BelongsToOne
+#        device_id: of:0001264fee6f5ca1
+        device_id: of:00010000c0a8c884
+#000106d0df6b05b0
+      requirements:
+        - owner:
+            node: service#att
+            relationship: tosca.relationships.BelongsToOne

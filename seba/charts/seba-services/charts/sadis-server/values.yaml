@@ -16,7 +16,7 @@
 image:
   repository: 'opencord/sadis-server'
   tag: '{{ .Chart.AppVersion }}'
-  pullPolicy: 'Always'
+  pullPolicy: 'IfNotPresent'
 
 global:
   registry: ''

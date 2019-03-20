@@ -60,52 +60,52 @@ images:
   vcore:
     repository: 'voltha/voltha-voltha'
     tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
   vcli:
     repository: 'voltha/voltha-cli'
     tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
   ofagent:
     repository: 'voltha/voltha-ofagent'
     tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
   netconf:
     repository: 'voltha/voltha-netconf'
     tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
   envoy_for_etcd:
     repository: 'voltha/voltha-envoy'
     tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
   alarm_generator:
     repository: 'voltha/voltha-alarm-generator'
     tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
   freeradius:
     repository: 'tpdock/freeradius'
     tag: '2.2.9'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
   http_backend:
     repository: 'gcr.io/google_containers/defaultbackend'
     tag: '1.4'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
   ingress_controller:
     repository: 'quay.io/kubernetes-ingress-controller/nginx-ingress-controller'
     tag: '0.10.2'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
   ingress_controller_base:
     repository: 'alpine'
     tag: '3.6'
-    pullPolicy: 'Always'
+    pullPolicy: 'IfNotPresent'
 
 # Need the namespace global for kafka
 global:

@@ -25,7 +25,7 @@ fullnameOverride: ""
 image:
   repository: xosproject/fabric-synchronizer
   tag: "{{ .Chart.AppVersion }}"
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 
 global:
   registry: ""
