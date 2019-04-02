@@ -1,0 +1,66 @@
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/onosapp.yaml
+  - custom_types/onosservice.yaml
+  - custom_types/serviceinstanceattribute.yaml
+
+description: Configures a full SEBA POD
+
+topology_template: 
+  node_templates:
+
+    service#onos:
+      type: tosca.nodes.ONOSService
+      properties:
+          name: onos
+          kind: data
+          rest_hostname: "onos-ui.default.svc.cluster.local"
+          rest_port: 8181
+
+    onos_app#sadis:
+      type: tosca.nodes.ONOSApp
+      properties:
+        name: sadis
+        app_id: org.opencord.sadis
+        url: https://oss.sonatype.org/service/local/repositories/releases/content/org/opencord/sadis-app/2.2.0/sadis-app-2.2.0.oar
+        version: 2.2.0
+      requirements:
+        - owner:
+            node: service#onos
+            relationship: tosca.relationships.BelongsToOne
+
+    sadis-config-attr:
+      type: tosca.nodes.ServiceInstanceAttribute
+      properties:
+        name: /onos/v1/network/configuration/apps/org.opencord.sadis
+        value: >
+          {
+            "sadis" : {
+              "integration" : {
+                "cache" : {
+                  "maxsize" : 1000,
+                  "ttl": "PT300S"
+                },
+                "url" : "http://sadis-service:8000/subscriber/%s"
+              },
+              "entries": [
+                {
+                  "id" : "10.113.100.200:9191",
+                  "hardwareIdentifier" : "00:00:00:00:02:01",
+                  "uplinkPort" : 65536
+                },
+                {
+                  "id" : "BRCM12345678",
+                  "cTag" : 111,
+                  "sTag" : 222,
+                  "nasPortId" : "nas_id",
+                  "circuitId" : "foo1",
+                  "remoteId" : "bar1"
+                }
+              ]
+            }
+          }
+      requirements:
+        - service_instance:
+            node: onos_app#sadis
+            relationship: tosca.relationships.BelongsToOne

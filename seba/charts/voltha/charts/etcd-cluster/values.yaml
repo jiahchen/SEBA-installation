@@ -17,8 +17,7 @@
 # Declare variables to be passed into your templates.
 
 clusterName: "etcd-cluster"
-# clusterSize: 3
-  clusterSize: 1
+clusterSize: 3
 memoryLimit: 1024Mi
 autoCompactionRetention: "12"
 
