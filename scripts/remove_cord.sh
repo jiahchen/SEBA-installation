@@ -1,12 +1,12 @@
 #!/bin/bash
 
-helm delete --purge att-workflow
-helm delete --purge base-kubernetes
-helm delete --purge seba-services
-helm delete --purge voltha
-helm delete --purge seba
-helm delete --purge onos
-helm delete --purge xos-core
-helm delete --purge cord-kafka
-helm delete --purge etcd-operator
-helm delete --purge cord-platform
+#helm delete --purge att-workflow > /dev/null 2>&1
+helm delete --purge base-kubernetes > /dev/null 2>&1
+helm delete --purge seba-services > /dev/null 2>&1
+helm delete --purge voltha > /dev/null 2>&1
+helm delete --purge seba > /dev/null 2>&1
+helm delete --purge onos > /dev/null 2>&1
+helm delete --purge xos-core > /dev/null 2>&1
+helm delete --purge cord-kafka > /dev/null 2>&1
+helm delete --purge etcd-operator > /dev/null 2>&1
+helm delete --purge cord-platform > /dev/null 2>&1

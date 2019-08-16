@@ -8,7 +8,7 @@ log ":     SEBA service     :     VOLTHA     :     Service Job     :"
 until [ 25 = $(kubectl get pod | grep 1/1 | wc -l) ] && \ 
       [ 8 = $(kubectl get pod -n voltha | grep 1/1 | wc -l) ] && \
       [ 2 = $(kubectl get pod | grep Completed | wc -l) ]; do
-  log ":        $(kubectl get pod | grep 1/1 | wc -l)/25        :        $(kubectl get pod -n voltha | grep 1/1 | wc -l)/8       :        $(kubectl get pod | grep Completed | wc -l)/2        :"
+  log ":        $(kubectl get pod | grep 1/1 | wc -l)/36        :        $(kubectl get pod -n voltha | grep 1/1 | wc -l)/8       :        $(kubectl get pod | grep Completed | wc -l)/2        :"
   sleep 5;
 done
 

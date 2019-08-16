@@ -84,12 +84,22 @@ topology_template:
         name: att-workflow-driver
         must-exist: true
 
-    ISKT71e81fb8:
+    edgecore_lab_onu1:
       type: tosca.nodes.AttWorkflowDriverWhiteListEntry
       properties:
         serial_number: BRCM12345678
-        #serial_number: ISKT71e81fb8
         pon_port_id: 536870912
+        device_id: of:000000000a7164c8
+      requirements:
+        - owner:
+            node: service#att
+            relationship: tosca.relationships.BelongsToOne
+    
+    edgecore_lab_onu2:
+      type: tosca.nodes.AttWorkflowDriverWhiteListEntry
+      properties:
+        serial_number: ISKT71e82448
+        pon_port_id: 536870914
         device_id: of:000000000a7164c8
       requirements:
         - owner:

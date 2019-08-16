@@ -8,7 +8,7 @@ log "Waiting for ATT driver, ATT Service Ready..."
 log ":     ATT POD     :     Service Job     :"
 until [ 26 = $(kubectl get pod | grep 1/1 | wc -l) ] && \
       [ 3 = $(kubectl get pod | grep Completed | wc -l) ]; do
-  log ":        $(kubectl get pod | grep 1/1 | wc -l)/26        :        $(kubectl get pod | grep Completed | wc -l)/3        :"
+  log ":        $(kubectl get pod | grep 1/1 | wc -l)/37        :        $(kubectl get pod | grep Completed | wc -l)/3        :"
   sleep 5;
 done
 

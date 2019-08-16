@@ -5,15 +5,26 @@ description: Create a test subscriber
 topology_template:
   node_templates:
     # A subscriber
-    my_house:
+    EdgecoreTW_lab1:
       type: tosca.nodes.RCORDSubscriber
       properties:
-        name: EdgecoreTW
+        name: EdgecoreTW-1
         status: pre-provisioned
         c_tag: 111
         s_tag: 222
         onu_device: BRCM12345678 # Serial Number of the ONU Device to which this subscriber is connected
-        #onu_device: ISKT71e81fb8 # Serial Number of the ONU Device to which this subscriber is connected
-        nas_port_id : "nas_id"
+        nas_port_id : "nas_id1"
         circuit_id: foo1
         remote_id: bar1
+
+    EdgecoreTW_lab2:
+      type: tosca.nodes.RCORDSubscriber
+      properties:
+        name: EdgecoreTW-2
+        status: pre-provisioned
+        c_tag: 112
+        s_tag: 222
+        onu_device: ISKT71e82448 # Serial Number of the ONU Device to which this subscriber is connected
+        nas_port_id : "nas_id2"
+        circuit_id: foo2
+        remote_id: bar2
