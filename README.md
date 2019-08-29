@@ -2,18 +2,20 @@
 
 Edgecore TW SEBA POC configuration and automation
 
-## - Install step
+## - One click Install
+
+### install all by one command
+```
+make all
+```
+
+## - Install Step
 
 ### 1. Install Kubernetes
 ```
 make k8s
 ```
 ### 2. Install SEBA
-```
-make all
-```
-
-or
 
 ```
 make cord; make seba; make att-workflow
@@ -23,7 +25,7 @@ make cord; make seba; make att-workflow
 
 ### 4. Setup pod config
 ```
-make pod-config
+make set-config
 ```
 
 ### Enable subscriber
