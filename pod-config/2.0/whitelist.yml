@@ -1,0 +1,35 @@
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/attworkflowdriverwhitelistentry.yaml
+  - custom_types/attworkflowdriverservice.yaml
+description: Create an entry in the whitelist
+topology_template:
+  node_templates:
+
+    service#att:
+      type: tosca.nodes.AttWorkflowDriverService
+      properties:
+        name: att-workflow-driver
+        must-exist: true
+
+    edgecore_lab_onu1:
+      type: tosca.nodes.AttWorkflowDriverWhiteListEntry
+      properties:
+        serial_number: BRCM12345678
+        pon_port_id: 536870912
+        device_id: of:000000000a7164c8
+      requirements:
+        - owner:
+            node: service#att
+            relationship: tosca.relationships.BelongsToOne
+
+    edgecore_lab_onu2:
+      type: tosca.nodes.AttWorkflowDriverWhiteListEntry
+      properties:
+        serial_number: ISKT71e82448
+        pon_port_id: 536870914
+        device_id: of:000000000a7164c8
+      requirements:
+        - owner:
+            node: service#att
+            relationship: tosca.relationships.BelongsToOne

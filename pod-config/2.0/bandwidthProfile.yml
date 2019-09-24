@@ -1,0 +1,28 @@
+tosca_definitions_version: tosca_simple_yaml_1_0
+imports:
+  - custom_types/bandwidthprofile.yaml
+
+description: Pre-provsion subscribers
+
+topology_template:
+  node_templates:
+
+    default:
+      type: tosca.nodes.BandwidthProfile
+      properties:
+        name: Default # used before subscriber's equipment has been authenticated
+        air: 100000
+        cbs: 30
+        cir: 600
+        ebs: 30
+        eir: 400
+
+    high_speed_bp:
+      type: tosca.nodes.BandwidthProfile
+      properties:
+         name: Bronze
+         air: 100000
+         cbs: 2000
+         cir: 5000
+         ebs: 2000
+         eir: 3000

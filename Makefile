@@ -15,16 +15,16 @@ k8s:
 all: k8s cord seba att-workflow
 
 cord:
-	$(SCRIPT_DIR)/cord.sh
+	$(SCRIPT_DIR)/2.0/cord.sh
 
 seba:
-	$(SCRIPT_DIR)/seba.sh
+	$(SCRIPT_DIR)/2.0/seba.sh
 
 att-workflow:
-	$(SCRIPT_DIR)/att-workflow.sh
+	$(SCRIPT_DIR)/2.0/att-workflow.sh
 
 set-config:
-	$(SCRIPT_DIR)/set-config.sh
+	$(SCRIPT_DIR)/2.0/set-config.sh
 
 remove-cord:
 	helm delete --purge att-workflow
