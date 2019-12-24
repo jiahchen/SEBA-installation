@@ -1,0 +1,5 @@
+appVersion: 3.3.1
+description: XOS - An Extensible Cloud Operating System
+icon: https://guide.opencord.org/logos/xos.svg
+name: xos-core
+version: 3.0.11

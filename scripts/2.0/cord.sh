@@ -2,7 +2,7 @@
 
 source ./scripts/2.0/log.sh
 log "Install CORD Platform..."
-helm install -n cord-platform cord/cord-platform --version=7.0.0 --set logging.enabled=false --set nem-monitoring.enabled=false --set att-workflow-driver.kafkaService=cord-kafka > /dev/null 2>&1
+helm install -n cord-platform cord-platform --version=7.0.0 --set logging.enabled=false --set nem-monitoring.enabled=false --set att-workflow-driver.kafkaService=cord-kafka > /dev/null 2>&1
 
 log "Waiting for CORD Platform Ready..."
 log ":     CORD POD     :"

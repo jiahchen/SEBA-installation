@@ -1,5 +1,0 @@
-appVersion: 1.6.0
-description: A Helm chart for Voltha based on K8S resources in Voltha project
-icon: https://guide.opencord.org/logos/cord.svg
-name: voltha
-version: 1.0.3
