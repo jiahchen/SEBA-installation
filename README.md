@@ -1,6 +1,6 @@
-# SEBA-POC-Edgecore-TW
+# SEBA-POC-TW
 
-Edgecore TW SEBA POC configuration and automation
+TW SEBA POC configuration and automation
 
 ## - Install step
 
@@ -20,6 +20,9 @@ make cord; make seba; make att-workflow
 ```
 
 ### 3. Prepare OLT, AGG Switch
+```
+Please follow ONIE installation
+```
 
 ### 4. Setup pod config
 ```
